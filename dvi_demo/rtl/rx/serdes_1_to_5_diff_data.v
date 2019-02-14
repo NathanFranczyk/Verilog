@@ -194,10 +194,10 @@ else begin
     incdec_data_d <= incdec_data_or[1] ;
     valid_data_d <= valid_data_or[1] ;
     if (ce_data_inta == 1'b1) begin
-      ce_data = mux ;
+      ce_data <= mux ;
     end
     else begin
-      ce_data = 64'h0000000000000000 ;
+      ce_data <= 64'h0000000000000000 ;
     end
       if (state == 7) begin
       flag <= 1'b0 ;
@@ -232,8 +232,8 @@ else begin
       end
     end
     else begin
-    ce_data = all_ce ;
-    inc_data_int = debug_in[1] ;
+    ce_data <= all_ce ;
+    inc_data_int <= debug_in[1] ;
     end
 end
 end

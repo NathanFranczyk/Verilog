@@ -59,7 +59,12 @@ module dvi_demo (
   //input wire D0; //wire to go to LEDS
   //input wire clk; //sys_clk
   output wire [7:0] LED,
-  output wire D0 //output for the WS2812b LEDS
+  output wire [7:0] rx0_red,
+  output wire [7:0] rx0_green,
+  output wire [7:0] rx0_blue,
+  output wire rx0_hsync,
+  output wire rx0_vsync,
+  output wire tmds_clk
 );
 
 
@@ -72,13 +77,14 @@ module dvi_demo (
   wire rx0_plllckd;
   wire rx0_reset;
   wire rx0_serdesstrobe;
-  wire rx0_hsync;          // hsync data
-  wire rx0_vsync;          // vsync data
+//  wire rx0_hsync;          // hsync data
+//  wire rx0_vsync;          // vsync data
+//  wire [7:0] rx0_red;      // pixel data out
+//  wire [7:0] rx0_green;    // pixel data out
+//  wire [7:0] rx0_blue;     // pixel data out
   wire rx0_de;             // data enable
   wire rx0_psalgnerr;      // channel phase alignment error
-  wire [7:0] rx0_red;      // pixel data out
-  wire [7:0] rx0_green;    // pixel data out
-  wire [7:0] rx0_blue;     // pixel data out
+
   wire [29:0] rx0_sdata;
   wire rx0_blue_vld;
   wire rx0_green_vld;
@@ -128,20 +134,9 @@ module dvi_demo (
     .green       (rx0_green),
     .blue        (rx0_blue)); 
 
-	///Instatiate the HDMI averager
-	pixel_averager hdmi_averager(
-		
-	);
-	
-	//Instantiate the LED driver
-	ws2812b WS2812b_driver(
-	
-	);
-
   //////////////////////////////////////
   // Status LED
   //////////////////////////////////////
-  assign LED = {rx0_red_rdy, rx0_green_rdy, rx0_blue_rdy, rx1_red_rdy, rx1_green_rdy, rx1_blue_rdy,
-                rx0_de, rx1_de};
-
+  assign LED = {rx0_red_rdy, rx0_green_rdy, rx0_blue_rdy, 4'b1111};
+  assign tmds_clk = rx0_tmdsclk;
 endmodule

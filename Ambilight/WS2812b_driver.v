@@ -21,7 +21,7 @@
 //modified from dhrosa's code 
 module WS2812b_driver
   #(
-    parameter NUM_LEDS          = 4,          // The number of LEDS in the chain
+    parameter NUM_LEDS          = 150,        // The number of LEDS in the chain
     parameter SYSTEM_CLOCK      = 50_000_000 // The frequency of the input clock signal, in Hz. This value must be correct in order to have correct timing for the WS2811 protocol.
     )
    (
@@ -31,7 +31,7 @@ module WS2812b_driver
     /////////////////////
     // Control signals //
     /////////////////////
-    output                             data_request, // This signal is asserted one cycle before red_in, green_in, and blue_in are sampled.
+    //output                             data_request, // This signal is asserted one cycle before red_in, green_in, and blue_in are sampled.
     output                             new_address,  // This signal is asserted whenever the address signal is updated to its new value.
     //^^use this as the "ready for next color"
 	 output reg [LED_ADDRESS_WIDTH-1:0] address,      // The current LED number. This signal is incremented to the next value two cycles after the last time data_request was asserted.
@@ -127,7 +127,7 @@ module WS2812b_driver
            STATE_LATCH: begin
               // Latch the input
               red <= red_in;
-//              green <= green_in;
+              green <= green_in;
               blue <= blue_in;
 
               // Setup the new address

@@ -1,0 +1,109 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 3 -n
+3 -fastpaths -xml mojo_top.twx mojo_top.ncd -o mojo_top.twr mojo_top.pcf
+
+Design file:              mojo_top.ncd
+Physical constraint file: mojo_top.pcf
+Device,package,speed:     xc6slx9,tqg144,C,-3 (PRODUCTION 1.23 2016-11-22)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock RX0_TMDS<3>
+------------+------------+------------+------------+------------+---------------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                           | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s)          | Phase  |
+------------+------------+------------+------------+------------+---------------------------+--------+
+RX0_TMDS<0> |   -1.080(R)|      FAST  |    3.369(R)|      SLOW  |hdmi_module/dvi_rx0/pclkx10|   0.000|
+RX0_TMDS<1> |   -1.080(R)|      FAST  |    3.369(R)|      SLOW  |hdmi_module/dvi_rx0/pclkx10|   0.000|
+RX0_TMDS<2> |   -1.080(R)|      FAST  |    3.369(R)|      SLOW  |hdmi_module/dvi_rx0/pclkx10|   0.000|
+RX0_TMDSB<0>|   -1.080(R)|      FAST  |    3.368(R)|      SLOW  |hdmi_module/dvi_rx0/pclkx10|   0.000|
+RX0_TMDSB<1>|   -1.080(R)|      FAST  |    3.368(R)|      SLOW  |hdmi_module/dvi_rx0/pclkx10|   0.000|
+RX0_TMDSB<2>|   -1.080(R)|      FAST  |    3.368(R)|      SLOW  |hdmi_module/dvi_rx0/pclkx10|   0.000|
+------------+------------+------------+------------+------------+---------------------------+--------+
+
+Setup/Hold to clock RX0_TMDSB<3>
+------------+------------+------------+------------+------------+---------------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                           | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s)          | Phase  |
+------------+------------+------------+------------+------------+---------------------------+--------+
+RX0_TMDS<0> |   -1.080(R)|      FAST  |    3.370(R)|      SLOW  |hdmi_module/dvi_rx0/pclkx10|   0.000|
+RX0_TMDS<1> |   -1.080(R)|      FAST  |    3.370(R)|      SLOW  |hdmi_module/dvi_rx0/pclkx10|   0.000|
+RX0_TMDS<2> |   -1.080(R)|      FAST  |    3.370(R)|      SLOW  |hdmi_module/dvi_rx0/pclkx10|   0.000|
+RX0_TMDSB<0>|   -1.080(R)|      FAST  |    3.369(R)|      SLOW  |hdmi_module/dvi_rx0/pclkx10|   0.000|
+RX0_TMDSB<1>|   -1.080(R)|      FAST  |    3.369(R)|      SLOW  |hdmi_module/dvi_rx0/pclkx10|   0.000|
+RX0_TMDSB<2>|   -1.080(R)|      FAST  |    3.369(R)|      SLOW  |hdmi_module/dvi_rx0/pclkx10|   0.000|
+------------+------------+------------+------------+------------+---------------------------+--------+
+
+Clock RX0_TMDS<3> to Pad
+------------+-----------------+------------+-----------------+------------+------------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                        | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s)       | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------------+--------+
+led<4>      |        10.085(R)|      SLOW  |         5.722(R)|      FAST  |hdmi_module/dvi_rx0/pclk|   0.000|
+led<5>      |         9.750(R)|      SLOW  |         5.519(R)|      FAST  |hdmi_module/dvi_rx0/pclk|   0.000|
+led<6>      |         9.759(R)|      SLOW  |         5.540(R)|      FAST  |hdmi_module/dvi_rx0/pclk|   0.000|
+------------+-----------------+------------+-----------------+------------+------------------------+--------+
+
+Clock RX0_TMDSB<3> to Pad
+------------+-----------------+------------+-----------------+------------+------------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                        | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s)       | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------------+--------+
+led<4>      |        10.086(R)|      SLOW  |         5.722(R)|      FAST  |hdmi_module/dvi_rx0/pclk|   0.000|
+led<5>      |         9.751(R)|      SLOW  |         5.519(R)|      FAST  |hdmi_module/dvi_rx0/pclk|   0.000|
+led<6>      |         9.760(R)|      SLOW  |         5.540(R)|      FAST  |hdmi_module/dvi_rx0/pclk|   0.000|
+------------+-----------------+------------+-----------------+------------+------------------------+--------+
+
+Clock to Setup on destination clock RX0_TMDS<3>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+RX0_TMDS<3>    |    5.467|    5.467|         |         |
+RX0_TMDSB<3>   |    5.468|    5.468|         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock RX0_TMDSB<3>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+RX0_TMDS<3>    |    5.466|    5.466|         |         |
+RX0_TMDSB<3>   |    5.467|    5.467|         |         |
+---------------+---------+---------+---------+---------+
+
+
+Analysis completed Thu Feb 14 17:22:16 2019 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 388 MB
+
+
+

@@ -56,6 +56,7 @@
 // "Clock    Freq (MHz) (degrees) Cycle (%) Jitter (ps)  Error (ps)"
 //----------------------------------------------------------------------------
 // CLK_OUT1___100.000______0.000______50.0______400.000____150.000
+// CLK_OUT2____50.000______0.000______50.0______200.000____150.000
 //
 //----------------------------------------------------------------------------
 // "Input Clock   Freq (MHz)    Input Jitter (UI)"
@@ -64,12 +65,13 @@
 
 `timescale 1ps/1ps
 
-(* CORE_GENERATION_INFO = "clk_100_from_50,clk_wiz_v3_6,{component_name=clk_100_from_50,use_phase_alignment=true,use_min_o_jitter=false,use_max_i_jitter=false,use_dyn_phase_shift=false,use_inclk_switchover=false,use_dyn_reconfig=false,feedback_source=FDBK_AUTO,primtype_sel=DCM_SP,num_out_clk=1,clkin1_period=20.0,clkin2_period=20.0,use_power_down=false,use_reset=true,use_locked=true,use_inclk_stopped=false,use_status=false,use_freeze=false,use_clk_valid=false,feedback_type=SINGLE,clock_mgr_type=AUTO,manual_override=false}" *)
+(* CORE_GENERATION_INFO = "clk_100_from_50,clk_wiz_v3_6,{component_name=clk_100_from_50,use_phase_alignment=true,use_min_o_jitter=false,use_max_i_jitter=false,use_dyn_phase_shift=false,use_inclk_switchover=false,use_dyn_reconfig=false,feedback_source=FDBK_AUTO,primtype_sel=DCM_SP,num_out_clk=2,clkin1_period=20.0,clkin2_period=20.0,use_power_down=false,use_reset=true,use_locked=true,use_inclk_stopped=false,use_status=false,use_freeze=false,use_clk_valid=false,feedback_type=SINGLE,clock_mgr_type=AUTO,manual_override=false}" *)
 module clk_100_from_50
  (// Clock in ports
   input         CLK_IN1,
   // Clock out ports
   output        CLK_OUT1,
+  output        CLK_OUT2,
   // Status and control signals
   input         RESET,
   output        LOCKED
@@ -92,6 +94,7 @@ module clk_100_from_50
   wire        locked_int;
   wire [7:0]  status_int;
   wire clkfb;
+  wire clk0;
   wire clk2x;
 
   DCM_SP
@@ -110,7 +113,7 @@ module clk_100_from_50
    (.CLKIN                 (clkin1),
     .CLKFB                 (clkfb),
     // Output clocks
-    .CLK0                  (),
+    .CLK0                  (clk0),
     .CLK90                 (),
     .CLK180                (),
     .CLK270                (),
@@ -144,6 +147,10 @@ module clk_100_from_50
    (.O   (CLK_OUT1),
     .I   (clk2x));
 
+
+  BUFG clkout2_buf
+   (.O   (CLK_OUT2),
+    .I   (clk0));
 
 
 

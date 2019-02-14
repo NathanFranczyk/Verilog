@@ -89,16 +89,16 @@ group set -comment {}
 group clear 0 end
 
 group insert \
-    {clk_100_from_50_tb.dut.clk} \
-
+    {clk_100_from_50_tb.dut.clk[1]} \
+    {clk_100_from_50_tb.dut.clk[2]} 
 group using {Counters}
 group set -overlay 0
 group set -comment {}
 group clear 0 end
 
 group insert \
-    {clk_100_from_50_tb.dut.counter} \
-
+    {clk_100_from_50_tb.dut.counter[1]} \
+    {clk_100_from_50_tb.dut.counter[2]} 
 group using {Status/control}
 group set -overlay 0
 group set -comment {}

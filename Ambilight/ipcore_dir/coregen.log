@@ -1,5 +1,49 @@
 INFO:sim:172 - Generating IP...
 Applying current project options...
 Finished applying current project options.
-Cancelled executing Tcl generator.
+WARNING:sim - A core named 'clk_100_from_50' already exists in the project.
+   Output products for this core may be overwritten.
+Resolving generics for 'clk_100_from_50'...
+WARNING:sim - A core named 'clk_100_from_50' already exists in the project.
+   Output products for this core may be overwritten.
+Applying external generics to 'clk_100_from_50'...
+Delivering associated files for 'clk_100_from_50'...
+WARNING:sim - Component clk_wiz_v3_6 does not have a valid model name for
+   Verilog synthesis
+Delivering EJava files for 'clk_100_from_50'...
+Delivered 3 files into directory
+/home/ise/Verilog/Ambilight/ipcore_dir/tmp/_cg/clk_100_from_50
+Delivered 1 file into directory
+/home/ise/Verilog/Ambilight/ipcore_dir/tmp/_cg/clk_100_from_50
+Generating ASY schematic symbol...
+Loading device for application Rf_Device from file '6slx9.nph' in environment
+/opt/Xilinx/14.7/ISE_DS/ISE/.
+INFO:sim:949 - Finished generation of ASY schematic symbol.
+Generating SYM schematic symbol for 'clk_100_from_50'...
+Generating ISE project...
+XCO file found: clk_100_from_50.xco
+XMDF file found: clk_100_from_50_xmdf.tcl
+Adding /home/ise/Verilog/Ambilight/ipcore_dir/tmp/_cg/clk_100_from_50.asy -view
+all -origin_type imported
+Adding /home/ise/Verilog/Ambilight/ipcore_dir/tmp/_cg/clk_100_from_50.ucf -view
+all -origin_type created
+Adding /home/ise/Verilog/Ambilight/ipcore_dir/tmp/_cg/clk_100_from_50.v -view
+all -origin_type created
+INFO:HDLCompiler:1845 - Analyzing Verilog file
+   "/home/ise/Verilog/Ambilight/ipcore_dir/tmp/_cg/clk_100_from_50.v" into
+   library work
+INFO:ProjectMgmt - Parsing design hierarchy completed successfully.
+Adding /home/ise/Verilog/Ambilight/ipcore_dir/tmp/_cg/clk_100_from_50.veo -view
+all -origin_type imported
+INFO:TclTasksC:2116 - The automatic calculation of top has been turned-off.
+   Please set the new top explicitly by running the "project set top" command.
+   To re-calculate the new top automatically, set the "Auto Implementation Top"
+   property to true.
+Top level has been set to "/clk_100_from_50"
+Generating README file...
+Generating FLIST file...
+INFO:sim:948 - Finished FLIST file generation.
+Launching README viewer...
+Moving files to output directory...
+Finished moving files to output directory
 Wrote CGP file for project 'clk_100_from_50'.
