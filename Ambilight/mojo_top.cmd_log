@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "/home/ise/Verilog/Ambilight/mojo_top.xst" -ofn "/home/ise/Verilog/Ambilight/mojo_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc /home/ise/Verilog/mojo-base-project-master/src/mojo.ucf -p xc6slx9-tqg144-3 mojo_top.ngc mojo_top.ngd  

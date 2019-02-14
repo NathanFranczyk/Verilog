@@ -1,0 +1,59 @@
+#Created by Constraints Editor (xc6slx9-tqg144-3) - 2012/11/05
+NET "clk" TNM_NET = clk;
+TIMESPEC TS_clk = PERIOD "clk" 50 MHz HIGH 50%;
+
+# PlanAhead Generated physical constraints 
+NET "clk" LOC = P56 | IOSTANDARD = LVTTL;
+NET "rst_n" LOC = P38 | IOSTANDARD = LVTTL;
+
+NET "cclk" LOC = P70 | IOSTANDARD = LVTTL;
+
+NET "led<0>" LOC = P134 | IOSTANDARD = LVTTL;
+NET "led<1>" LOC = P133 | IOSTANDARD = LVTTL;
+NET "led<2>" LOC = P132 | IOSTANDARD = LVTTL;
+NET "led<3>" LOC = P131 | IOSTANDARD = LVTTL;
+NET "led<4>" LOC = P127 | IOSTANDARD = LVTTL;
+NET "led<5>" LOC = P126 | IOSTANDARD = LVTTL;
+NET "led<6>" LOC = P124 | IOSTANDARD = LVTTL;
+NET "led<7>" LOC = P123 | IOSTANDARD = LVTTL;
+
+NET "spi_mosi" LOC = P44 | IOSTANDARD = LVTTL;
+NET "spi_miso" LOC = P45 | IOSTANDARD = LVTTL;
+NET "spi_ss" LOC = P48 | IOSTANDARD = LVTTL;
+NET "spi_sck" LOC = P43 | IOSTANDARD = LVTTL;
+NET "spi_channel<0>" LOC = P46 | IOSTANDARD = LVTTL;
+NET "spi_channel<1>" LOC = P61 | IOSTANDARD = LVTTL;
+NET "spi_channel<2>" LOC = P62 | IOSTANDARD = LVTTL;
+NET "spi_channel<3>" LOC = P65 | IOSTANDARD = LVTTL;
+
+NET "avr_tx" LOC = P55 | IOSTANDARD = LVTTL;
+NET "avr_rx" LOC = P59 | IOSTANDARD = LVTTL;
+NET "avr_rx_busy" LOC = P39 | IOSTANDARD = LVTTL;
+NET "button" LOC = P50 | IOSTANDARD = LVCMOS33;
+
+
+##############################################
+# TDMS PAIRS ON PINS I Soldered for MOJO
+##############################################
+NET "RX0_TMDS<3>"  	LOC = P95 |IOSTANDARD = TMDS_33 ; # CLK
+NET "RX0_TMDSB<3>"  LOC = P94 |IOSTANDARD = TMDS_33 ;
+NET "RX0_TMDS<2>"  	LOC = P102 |IOSTANDARD = TMDS_33 ; # Red
+NET "RX0_TMDSB<2>"  LOC = P101 |IOSTANDARD = TMDS_33 ;
+NET "RX0_TMDS<1>"  	LOC = P100 |IOSTANDARD = TMDS_33 ; # Green	
+NET "RX0_TMDSB<1>"  LOC = P99 |IOSTANDARD = TMDS_33 ;
+NET "RX0_TMDS<0>"  	LOC = P98  |IOSTANDARD = TMDS_33 ; # Blue	
+NET "RX0_TMDSB<0>"  LOC = P97  |IOSTANDARD = TMDS_33 ;
+NET "DDC+" LOC = P93 |IOSTANDARD = TMDS_33 ; #May not be TMDS
+NET "DDC-" LOC = P92 |IOSTANDARD = TMDS_33 ;
+
+#
+# Constraint for RX0
+#
+NET "dvi_rx0/rxclk" TNM_NET = DVI_CLOCK0;
+TIMESPEC TS_DVI_CLOCK0 = PERIOD "DVI_CLOCK0" 100 MHz HIGH 50%;
+
+#
+# Constraint for RX1
+#
+NET "dvi_rx1/rxclk" TNM_NET = DVI_CLOCK1;
+TIMESPEC TS_DVI_CLOCK1 = PERIOD "DVI_CLOCK1" 100 MHz HIGH 50%;

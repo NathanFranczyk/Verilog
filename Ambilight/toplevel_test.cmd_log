@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "/home/ise/Verilog/Ambilight/toplevel_test.xst" -ofn "/home/ise/Verilog/Ambilight/toplevel_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-tqg144-3 toplevel_test.ngc toplevel_test.ngd  
