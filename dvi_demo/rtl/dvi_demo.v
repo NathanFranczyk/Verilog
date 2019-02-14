@@ -56,19 +56,11 @@ module dvi_demo (
   input wire        clk100,      //100 MHz osicallator
   input wire [3:0]  RX0_TMDS,
   input wire [3:0]  RX0_TMDSB,
-
-  output wire [7:0] LED
+  //input wire D0; //wire to go to LEDS
+  //input wire clk; //sys_clk
+  output wire [7:0] LED,
+  output wire D0 //output for the WS2812b LEDS
 );
-
-  ////////////////////////////////////////////////////
-  // 25 MHz and switch debouncers
-  ////////////////////////////////////////////////////
-  wire clk25, clk25m;
-
-  BUFIO2 #(.DIVIDE_BYPASS("FALSE"), .DIVIDE(5))
-  sysclk_div (.DIVCLK(clk25m), .IOCLK(), .SERDESSTROBE(), .I(clk100));
-
-  BUFG clk25_buf (.I(clk25m), .O(clk25));
 
 
   /////////////////////////
@@ -136,6 +128,15 @@ module dvi_demo (
     .green       (rx0_green),
     .blue        (rx0_blue)); 
 
+	///Instatiate the HDMI averager
+	pixel_averager hdmi_averager(
+		
+	);
+	
+	//Instantiate the LED driver
+	ws2812b WS2812b_driver(
+	
+	);
 
   //////////////////////////////////////
   // Status LED

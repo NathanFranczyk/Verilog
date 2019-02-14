@@ -103,6 +103,13 @@
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="60"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="60"/>
     </file>
+    <file xil_pn:name="WS2812b_driver.v" xil_pn:type="FILE_VERILOG">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="62"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="62"/>
+    </file>
+    <file xil_pn:name="hdmi_averager.v" xil_pn:type="FILE_VERILOG">
+      <association xil_pn:name="Implementation" xil_pn:seqID="63"/>
+    </file>
     <file xil_pn:name="ipcore_dir/clk_100_from_50.xise" xil_pn:type="FILE_COREGENISE">
       <association xil_pn:name="Implementation" xil_pn:seqID="61"/>
     </file>
